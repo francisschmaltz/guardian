@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.0'
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'mysql2', '>= 0.4.10', '< 0.5'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -17,6 +17,7 @@ gem 'dynamic_form'
 gem 'hashie'
 gem 'foreman'
 gem 'omniauth'
+gem 'omniauth-cas'
 
 require_relative './lib/guardian/config'
 if Guardian.yaml_config['auth'] && strategy = Guardian.yaml_config['auth']['strategy']

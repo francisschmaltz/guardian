@@ -26,7 +26,7 @@ class AuthenticationController < ApplicationController
   def logout
     auth_session.invalidate! if logged_in?
     reset_session
-    redirect_to login_path, :notice => "You have been logged out successfully"
+    redirect_to "https://idmsauth.yaboiii.com/logout"
   end
 
   def join

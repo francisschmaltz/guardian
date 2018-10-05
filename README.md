@@ -15,7 +15,7 @@ certificates for internal-use only.
 2. `cd guardian`
 3. `bundle`
 4. `bundle exec rake db:schema:load guardian:create_initial_user`
-5. `bundle exec rails server
+5. `bundle exec rails server`
 
 ## Upgrade
 
@@ -29,3 +29,6 @@ certificates for internal-use only.
 
 * Support for revocation lists
 * A UI would be nice
+
+## Notes
+* macOS Mojave needs to run `gem install mysql2 -v '0.4.10' -- --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include` to install mysql2
