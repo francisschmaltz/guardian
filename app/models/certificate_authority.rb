@@ -28,7 +28,7 @@ class CertificateAuthority < ApplicationRecord
   validates :expires_at, :presence => true
 
   def auto_generate_certificate
-    self.private_key = OpenSSL::PKey::RSA.new(2048)
+    self.private_key = OpenSSL::PKey::RSA.new(4096)
     new_certificate = self.generate_x509_certificate(:public_key => self.private_key.public_key, :expiry => self.expires_at, :is_ca => true)
     self.sign(new_certificate)
     self.certificate = new_certificate

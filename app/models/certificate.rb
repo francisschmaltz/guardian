@@ -58,7 +58,7 @@ class Certificate < ApplicationRecord
   def auto_generate_certificate
     if self.private_key.nil?
       # Generate a new private key if one hasn't been provided for this certificate
-      self.private_key = OpenSSL::PKey::RSA.new(2048)
+      self.private_key = OpenSSL::PKey::RSA.new(4096)
     end
     self.serial = self.class.next_serial_for(self.certificate_authority)
     new_certificate = self.generate_x509_certificate(:ca => self.certificate_authority, :public_key => self.private_key.public_key, :expiry => self.expires_at, :serial => self.serial)
